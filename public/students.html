@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Students - Student Registration System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2>Student Registration System</h2>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register Student</a>
+      <a href="students.html">View Students</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <div class="page-header">
+        <h2 class="form-title">Registered Students</h2>
+        <a href="register.html" class="btn btn-primary">+ Register Student</a>
+      </div>
+
+      <!-- Success / Error message boxes -->
+      <div id="successAlert" class="alert alert-success"></div>
+      <div id="errorAlert" class="alert alert-error"></div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Name</th>
+              <th>Date of Birth</th>
+              <th>Gender</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Department</th>
+              <th>Course</th>
+              <th>Year</th>
+              <th>Address</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody">
+            <!-- Rows are inserted here by students.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="emptyState" class="empty-state" style="display:none;">
+        No students registered yet. <a href="register.html">Register the first one</a>.
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Student Modal -->
+  <div class="modal-overlay" id="editModalOverlay">
+    <div class="modal-box">
+      <h3>Edit Student</h3>
+
+      <div id="editErrorAlert" class="alert alert-error"></div>
+
+      <form id="editForm" novalidate>
+        <input type="hidden" id="edit_student_id" />
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="edit_full_name">Full Name</label>
+            <input type="text" id="edit_full_name" />
+          </div>
+
+          <div class="form-group">
+            <label for="edit_date_of_birth">Date of Birth</label>
+            <input type="date" id="edit_date_of_birth" />
+          </div>
+
+          <div class="form-group">
+            <label for="edit_gender">Gender</label>
+            <select id="edit_gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="edit_email">Email</label>
+            <input type="email" id="edit_email" />
+          </div>
+
+          <div class="form-group">
+            <label for="edit_phone_number">Phone Number</label>
+            <input type="text" id="edit_phone_number" />
+          </div>
+
+          <div class="form-group">
+            <label for="edit_department">Department</label>
+            <input type="text" id="edit_department" />
+          </div>
+
+          <div class="form-group">
+            <label for="edit_course">Course</label>
+            <input type="text" id="edit_course" />
+          </div>
+
+          <div class="form-group">
+            <label for="edit_year">Year</label>
+            <select id="edit_year">
+              <option value="1">Year 1</option>
+              <option value="2">Year 2</option>
+              <option value="3">Year 3</option>
+              <option value="4">Year 4</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="edit_address">Address</label>
+            <textarea id="edit_address" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <button type="button" id="cancelEditBtn" class="btn btn-outline">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/students.js"></script>
+</body>
+</html>

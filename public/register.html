@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register Student - Student Registration System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2>Student Registration System</h2>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register Student</a>
+      <a href="students.html">View Students</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <h2 class="form-title">Register a New Student</h2>
+
+      <!-- Success / Error message boxes -->
+      <div id="successAlert" class="alert alert-success"></div>
+      <div id="errorAlert" class="alert alert-error"></div>
+
+      <form id="registerForm" novalidate>
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="student_id">Student ID</label>
+            <input type="text" id="student_id" name="student_id" placeholder="e.g. STU003" />
+            <span class="error-text" id="err_student_id"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name" name="full_name" placeholder="e.g. Jane Doe" />
+            <span class="error-text" id="err_full_name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="date_of_birth">Date of Birth</label>
+            <input type="date" id="date_of_birth" name="date_of_birth" />
+            <span class="error-text" id="err_date_of_birth"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="">-- Select Gender --</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="error-text" id="err_gender"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="e.g. jane@example.com" />
+            <span class="error-text" id="err_email"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" id="phone_number" name="phone_number" placeholder="e.g. 0771234567" />
+            <span class="error-text" id="err_phone_number"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" placeholder="e.g. Computer Science" />
+            <span class="error-text" id="err_department"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="course">Course</label>
+            <input type="text" id="course" name="course" placeholder="e.g. BSc Software Engineering" />
+            <span class="error-text" id="err_course"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="year">Year</label>
+            <select id="year" name="year">
+              <option value="">-- Select Year --</option>
+              <option value="1">Year 1</option>
+              <option value="2">Year 2</option>
+              <option value="3">Year 3</option>
+              <option value="4">Year 4</option>
+            </select>
+            <span class="error-text" id="err_year"></span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" placeholder="e.g. 123 Main Street, Colombo"></textarea>
+            <span class="error-text" id="err_address"></span>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Register</button>
+          <button type="reset" id="clearBtn" class="btn btn-outline">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
